@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine?</title>
+    <style>
+        body {
+            font-family: "Lucida Handwriting", sans-serif; /* Changed font to a Diary Style font */
+            text-align: center;
+            background-color: red; /* Changed background color to red */
+            color: white; /* Changed font color to white */
+            margin-top: 100px;
+        }
+        #valentine {
+            font-size: 24px;
+        }
+        #choices button {
+            margin-top: 20px;
+            font-size: 18px;
+            padding: 10px 20px;
+            cursor: pointer;
+            background-color: white; /* Changed button background color to white */
+            color: red; /* Changed button font color to red */
+            border: 2px solid red; /* Added border to the buttons */
+            border-radius: 5px; /* Added border-radius for rounded corners */
+        }
+        #choices button:hover {
+            background-color: #f0f0f0; /* Light gray background on hover */
+        }
+    </style>
+</head>
+<body>
+    <div id="valentine">
+        <p>Will you be my Valentine?</p>
+        <div id="choices">
+            <button id="yes">Yes</button>
+            <button id="no">No</button>
+        </div>
+        <div id="message"></div> <!-- Added a div for displaying messages -->
+    </div>
+
+    <script>
+        let yesButton = document.getElementById('yes');
+        let noButton = document.getElementById('no');
+        let messageDiv = document.getElementById('message');
+        let noCount = 0;
+
+        yesButton.addEventListener('click', function() {
+            messageDiv.innerHTML = "<p>😍 Eyyyyy Naka Apas Na Gyud ko sa Feb 14  Happy Valentine's Day! 😍</p>";
+        });
+
+        noButton.addEventListener('click', function() {
+            noCount++;
+            if (noCount <= 10) {
+                if (noCount === 1) {
+                    messageDiv.innerHTML = "<p>😔 Baka Naman kahit one chance UwU</p>";
+                } else if (noCount === 2) {
+                    messageDiv.innerHTML = "<p>😢 Kinsa man pud ko para eh crushback mahimo nalang ko hotdog</p>";
+                } else if (noCount === 3) {
+                    messageDiv.innerHTML = "<p>😞 Sana pinutok nalang ako HAHAHHAHA</p>";
+                } else if (noCount === 4) {
+                    messageDiv.innerHTML = "<p>😔 Okay ra kinsa man pud ko, gusto raman naku ihatag ang kalibutan saimo</p>";
+                } else if (noCount === 5) {
+                    messageDiv.innerHTML = "<p>😭 what if ako imong prince charming *sinuntok ang pader</p>";
+                } else if (noCount === 6) {
+                    let randomMessages = [
+                        "😢 Why do you keep rejecting me?",
+                        "😔 I guess I'm just not lovable...",
+                        "😞 I'll go watch sad movies alone then...",
+                        "😭 I'll be spending Valentine's Day alone...",
+                        "💔 My heart is broken...",
+                        "😢 What did I do wrong?",
+                        "😔 Maybe I'm just not funny enough...",
+                        "😞 I'll just sit here and eat ice cream...",
+                        "😭 This is the saddest Valentine's Day ever...",
+                        "💔 I guess I'm destined to be alone..."
+                    ];
+                    let randomIndex = Math.floor(Math.random() * randomMessages.length);
+                    messageDiv.innerHTML = "<p>" + randomMessages[randomIndex] + "</p>";
+                }
+            }
+        });
+    </script>
+</body>
+</html>
